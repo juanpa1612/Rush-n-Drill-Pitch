@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class animationScript : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class animationScript : MonoBehaviour
 
     private void Start()
     {
-        animators = new Animator[4];
+        animators = new Animator[6];
 
         for (int i = 0; i < pages.Length; i++)
         {
@@ -34,6 +35,10 @@ public class animationScript : MonoBehaviour
             animators[actualPage].SetBool("Active", false);
             actualPage--;
             animators[actualPage].SetBool("Active", true);
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("Video");
         }
     }
 }

@@ -10,17 +10,20 @@ public class Product : MonoBehaviour
     VideoPlayer drillGameplay;
     [SerializeField]
     RawImage image;
+    [SerializeField]
+    MovieTexture movie;
 
 	void Start ()
     {
-        image.texture = drillGameplay.texture;
+        image.texture = movie as MovieTexture;
 	}
 	
 	void Update ()
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            drillGameplay.Play();
+            movie.Play();
+            
         }
         if (Input.GetKeyDown(KeyCode.O))
         {
