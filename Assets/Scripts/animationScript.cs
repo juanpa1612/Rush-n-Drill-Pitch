@@ -14,7 +14,7 @@ public class animationScript : MonoBehaviour
 
     private void Start()
     {
-        animators = new Animator[6];
+        animators = new Animator[7];
 
         for (int i = 0; i < pages.Length; i++)
         {
